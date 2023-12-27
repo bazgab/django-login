@@ -17,22 +17,27 @@
       </div> 
 
     <div class="w-25 position-absolute top-50 start-50 translate-middle">
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="Username">
-            <label for="floatingInput">Username</label>
-        </div>
-        <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-        </div>
-        <br>
-        <input type="submit" class="btn btn-primary"/>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Username">
+                <label for="floatingInput">Username</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <br>
+            <input type="submit" class="btn btn-primary"/>
+        </form>
+        
         <br>
         <br>
         <p>Demo accounts: </p>
         <ul class="list-group">
-            <li class="list-group-item">Username: user_one <br> Password: 1_password</li>
-            <li class="list-group-item">Username: user_two <br> Password: 2_password</li>
+            <li class="list-group-item list-group-item-dark">Username: user_one <br> Password: 1_password</li>
+            <li class="list-group-item list-group-item-dark">Username: user_two <br> Password: 2_password</li>
             
           </ul>
     
