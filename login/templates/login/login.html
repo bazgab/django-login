@@ -17,6 +17,15 @@
       </div> 
 
     <div class="w-25 position-absolute top-50 start-50 translate-middle">
+        
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+        
         <form method="POST" >
             {% csrf_token %}
             

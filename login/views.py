@@ -23,7 +23,13 @@ def login_user(request):
             login(request, user)
             return redirect('index/')
         else:
+            messages.success(request, ("Invalid Username and/or password. Please try again."))
             return redirect('login_user')
+            
     
     else:
         return render(request, 'login/login.html', {})   
+
+def logout_user(request):
+    logout(request)
+    return redirect('home/login_user')
