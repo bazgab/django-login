@@ -7,7 +7,7 @@ class login_view(TemplateView):
     template_name = 'login/login.html'
 
 class authorized(LoginRequiredMixin, TemplateView):
-    template_name = 'login/authroized.html'
+    template_name = 'login/authorized.html'
     login_url = '/admin'
 
 

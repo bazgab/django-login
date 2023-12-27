@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     
     # my Apps
     'login',
+    'home',
+    'logout',
 ]
 
 MIDDLEWARE = [
