@@ -11,7 +11,7 @@ class authorized(LoginRequiredMixin, TemplateView):
     template_name = 'login/authorized.html'
     login_url = '/admin'
 
-class login_interface_view(LoginView):
-    template_name = 'login/login.html'
-    
+class index_page(TemplateView):
+    template_name = 'login/index.html'
+
     
