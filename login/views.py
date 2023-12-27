@@ -1,18 +1,12 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 # Create your views here.
 
-
-class authorized(LoginRequiredMixin, TemplateView):
-    template_name = 'login/authorized.html'
-    login_url = '/admin'
-
-class index_page(TemplateView):
-    template_name = 'login/index.html'
+@login_required(login_url='login_user')
+def index_page(request):
+    return render(request, 'login/index.html', {})
 
 def login_user(request):
     if request.method == "POST":
@@ -32,4 +26,8 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('home/login_user')
+    messages.success(request, ("You have logged out."))
+    return redirect('login_user')
+
+def register_user(request):
+    return render(request, 'login/register.html', {})
