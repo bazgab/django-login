@@ -20,6 +20,11 @@
             <div class="card-body text-white">
               <h1 class="card-title">Login successful.</h1>
               <br/>
+                {% if user.is_authenticated %}
+                    <p>Welcome, <strong>{{ user.username }}</strong>. Thanks for logging in.</p>
+                {% else %}
+                    <p>Welcome, new user. Please log in.</p>
+                {% endif %}
               <p class="card-text">To log out, click on the button located on the top-left corner</p>
             </div>
           </div>

@@ -20,7 +20,7 @@
         
         {% if messages %}
             {% for message in messages %}
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-info" role="alert">
                     {{message}}
                 </div>
             {% endfor %}
@@ -38,7 +38,7 @@
                 <label for="password">Password</label>
             </div>
             <br>
-            <input type="submit" class="btn btn-primary"/>
+            <input type="submit" class="btn btn-primary"/> <a href="{% url "register_user" %}" class='btn btn-outline-info'>Sign Up</a>
         </form>
         
         <br>
